@@ -9,6 +9,7 @@ This project leverages deep learning to detect pneumonia from chest X-ray images
 **Project files**
 
 **ModelDev.ipynb:** Contains the notebook for training and evaluating the deep learning model.
+
 **Flask Application:** Integrates the model into a lightweight web application for real-world usage.
 
 
