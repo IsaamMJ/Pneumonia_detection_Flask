@@ -5,6 +5,7 @@ This project leverages deep learning to detect pneumonia from chest X-ray images
 **Deep Learning Model:** A robust deep learning model trained on chest X-ray images to identify pneumonia with high accuracy.
 **Web Application:** The model is deployed using Flask, allowing easy access through a user-friendly web interface.
 **Medical Utility:** Designed to assist in early and accurate diagnosis of pneumonia.
+
 **Project files**
 
 **ModelDev.ipynb:** Contains the notebook for training and evaluating the deep learning model.
