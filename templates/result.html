@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/uploads/watercolor-medical-background_52683-162142.avif');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='uploads/watercolor-medical-background_52683-162142.avif') }}');">
+
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p><b>Prediction:</b> {{ prediction }}</p>
+        <p><b>Patient Name:</b> {{ name }}</p>
+        <p><b>Age:</b> {{ age }}</p>
+        <p><b>Sex:</b> {{ sex }}</p>
+        <img src="{{ image_path }}" alt="Uploaded Image">
+        <br>
+        <a href="{{ url_for('home') }}" class="back-button">Go Back</a>
+    </div>
+</body>
+</html>

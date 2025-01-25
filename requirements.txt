@@ -1,0 +1,8 @@
+flask
+numpy
+opencv-python-headless
+keras
+tensorflow
+flask-cors
+python-dotenv
+waitress

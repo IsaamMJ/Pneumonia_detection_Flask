@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/uploads/watercolor-medical-background_52683-162142.avif');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        input[type="text"], input[type="number"], select, input[type="file"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='uploads/watercolor-medical-background_52683-162142.avif') }}');">
+
+    <div class="container">
+        <h1>Pneumonia Detection</h1>
+        <p>Upload a chest X-ray image to predict pneumonia status.</p>
+        <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Patient Name" required>
+            <input type="number" name="age" placeholder="Patient Age" required>
+            <select name="sex" required>
+                <option value="" disabled selected>Select Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="file" name="file" accept="image/*" required>
+            <input type="submit" value="Upload and Predict">
+        </form>
+    </div>
+</body>
+</html>
