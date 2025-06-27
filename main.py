@@ -62,4 +62,6 @@ def predict():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
+    print(f"🚀 Server starting on http://0.0.0.0:{port}")  # 👈 Add this line
     serve(app, host='0.0.0.0', port=port)
+
